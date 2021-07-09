@@ -1,0 +1,53 @@
+--Question 1 :
+
+la différence que ça ne update pas dans le deuxième shell.
+
+--Question 2 :
+
+tp_trans=*# select * from T;
+ a | b
+---+---
+ 3 | 0
+ 5 | 3
+ 3 | 1
+(3 lignes)
+
+(je me suis trompé en faisant : 
+
+tp_trans=*# UPDATE T SET A = A+1 ;
+UPDATE 3
+tp_trans=*# UPDATE T SET A = A+2;
+UPDATE 3
+
+--Question 3 :
+
+Mise à part la procedure, le résultat est le même.
+
+--Question 4
+
+tp_trans=# select * from T;
+ a | b
+---+---
+ 4 | 0
+ 6 | 3
+ 4 | 1
+(3 lignes)
+
+-- Question 5 :
+
+le RollBack annule les les modifs du begin
+
+-- Question 6 :
+
+tp_trans=*# Rollback;
+ROLLBACK
+tp_trans=# select * from T;
+ a | b
+---+---
+ 4 | 0
+ 6 | 3
+ 4 | 1
+(3 lignes)
+
+
+
